@@ -1,4 +1,4 @@
-# LamaVocs - Vocabulary Learning Application
+# Next.js + TypeScript + tRPC + Prisma + Supabase Template
 
 ## Tech Stack
 
@@ -43,7 +43,7 @@
 ## Project Structure
 
 ```
-lama-vocs/
+project-starter/
 ├── src/
 │   ├── app/                 # Next.js app directory
 │   │   ├── api/
@@ -74,18 +74,17 @@ lama-vocs/
 
 ## Database Schema
 
-### Card Model
+### Example Model
 ```prisma
 model Card {
   id          String   @id @default(cuid())
-  front       String   // Front of the card (word/phrase)
-  back        String   // Back of the card (translation/definition)
-  language    String   // Language code (e.g., "en", "es")
-  difficulty  Int      @default(1) // 1-5 difficulty scale
+  title       String   // Example field
+  content     String   // Example field
+  status      String   // Example field
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   
-  @@index([language])
+  @@index([status])
   @@index([createdAt])
 }
 ```
@@ -228,12 +227,12 @@ pnpm dev
 
 ## API Routes
 
-### tRPC Endpoints
-- `card.getOne` - Fetch single vocabulary card
-- `card.getAll` - Fetch all cards with pagination
-- `card.create` - Create new card
-- `card.update` - Update existing card
-- `card.delete` - Delete card
+### Example tRPC Endpoints
+- `card.getOne` - Fetch single item
+- `card.getAll` - Fetch all items with pagination
+- `card.create` - Create new item
+- `card.update` - Update existing item
+- `card.delete` - Delete item
 
 ## Troubleshooting
 
